@@ -7,13 +7,13 @@ onready var sprite := $AnimatedSprite
 var velocity = Vector2()
 
 func _ready() -> void:
-	velocity.x = speed
+	print("!!!!!")
+	velocity.y = speed
 
 func get_side_input():
-	velocity.x = 0
+	#velocity.x = 0
 	var right = Input.is_action_pressed('right')
 	var left = Input.is_action_pressed('left')
-	
 
 	if right:
 		inverte_movimento()
@@ -24,8 +24,11 @@ func inverte_movimento():
 
 func _physics_process(delta):
 	get_side_input()
-	velocity.x = speed
-	
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+
+	move_and_slide(velocity, Vector2(0, -1))
 	
 	print(velocity)
+
+
+func _on_Bloco_MOVE_UP() -> void:
+	print("MOVEU")
