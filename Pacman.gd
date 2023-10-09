@@ -31,4 +31,6 @@ func _physics_process(delta):
 
 
 func _on_Bloco_MOVE_UP() -> void:
-	print("MOVEU")
+	print("a")
+	velocity.x = 0
+	velocity.y = speed * -1

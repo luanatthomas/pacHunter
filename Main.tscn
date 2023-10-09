@@ -5,10 +5,10 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 371, 245 )
-
 [node name="Bloco" parent="." instance=ExtResource( 2 )]
-position = Vector2( 378, 491 )
+position = Vector2( 391, 383 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 391, 257 )
 
 [connection signal="MOVE_UP" from="Bloco" to="KinematicBody2D" method="_on_Bloco_MOVE_UP"]
