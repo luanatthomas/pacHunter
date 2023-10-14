@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pacman.png-3575e5214bbc341a6851f9626ae49d62.stex"
+path="res://.import/Tilemap.png-ff4edfdaa2c15045f6382dff9556e3aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/Pacman.png"
-dest_files=[ "res://.import/Pacman.png-3575e5214bbc341a6851f9626ae49d62.stex" ]
+source_file="res://img/Tilemap.png"
+dest_files=[ "res://.import/Tilemap.png-ff4edfdaa2c15045f6382dff9556e3aa.stex" ]
 
 [params]
 
