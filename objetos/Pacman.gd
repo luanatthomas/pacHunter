@@ -15,11 +15,6 @@ func _ready() -> void:
 	sprite.play("right")
 
 func _physics_process(delta):
-#	ray.set_cast_to(Vector2.RIGHT)
-#	ray.force_raycast_update()
-#	print(ray)
-##	print(ray.get_collision_normal())
-#	print(ray.get_collision_point())
 	
 	if !tween.is_active():
 		update_sprite()
