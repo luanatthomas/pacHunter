@@ -1,4 +1,4 @@
-extends Area2D
+extends "res://objetos/Blocks.gd"
 
 signal move_left(bodyName)
 

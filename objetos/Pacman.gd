@@ -51,7 +51,7 @@ func move():
 		inverte_movimento()
 
 func _on_move_up(bodyName):
-	print("BBBBBB")
+#	print("BBBBBB")
 	if bodyName == name:
 		velocity.x = 0
 		velocity.y = speed * -1
