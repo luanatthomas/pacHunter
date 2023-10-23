@@ -1,22 +1,28 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://objetos/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://img/Pacman.png" type="Texture" id=2]
+[ext_resource path="res://img/Pacman2.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 120, 0, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 60, 60 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 120, 60, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 160, 80, 60, 60 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 120, 120, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 160, 160, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 160, 80, 60, 60 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
@@ -48,24 +54,29 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 120, 60, 60 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 180, 0, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 60, 60 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=33]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 180, 60, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 240, 80, 60, 60 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=34]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 180, 120, 60, 60 )
+atlas = ExtResource( 3 )
+region = Rect2( 240, 160, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 240, 80, 60, 60 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 20 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "down",
 "speed": 10.0
@@ -80,7 +91,7 @@ animations = [ {
 "name": "right",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 29 ) ],
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "up",
 "speed": 10.0
@@ -99,7 +110,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 light_mask = 0
 frames = SubResource( 4 )
-animation = "right"
+animation = "down"
 
 [node name="ColisaoCentro" type="CollisionShape2D" parent="."]
 light_mask = 2

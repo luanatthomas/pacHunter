@@ -16,9 +16,10 @@ func _process(delta: float):
 	var quantColumns = worldSize.y - 1
 	var quantLines = worldSize.x - 1
 
-	for l in range(1, quantLines):
-		for c in range(1, quantColumns):
-			gridLines.set_cellv(Vector2(l, c), 0)
+	gridLines.clear()
+#	for l in range(1, quantLines):
+#		for c in range(1, quantColumns):
+#			gridLines.set_cellv(Vector2(l, c), 0)
 
 	var mouse_position = get_viewport().get_mouse_position()
 	var cell := world_to_map(mouse_position)
@@ -74,8 +75,9 @@ func _input(event):
 					
 func posInCenter(initialPosition, b):
 	var pos = map_to_world(world_to_map(initialPosition))
-	print(get_cellv(initialPosition))
+	print(get_cellv(pos))
 	print(get_cell_autotile_coord(pos.x,pos.y))
+	print(tile_set)
 	print(tile_set.get_tiles_ids())
 	b.position.x = pos.x + 30
 	b.position.y = pos.y + 30
