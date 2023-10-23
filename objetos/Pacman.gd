@@ -13,6 +13,7 @@ func _ready() -> void:
 	set_name("Pacman")
 	velocity.x = speed
 	sprite.play("right")
+	z_index=2
 
 func _physics_process(delta):
 	
@@ -37,9 +38,9 @@ func update_sprite():
 func move():
 	ray.set_cast_to(velocity * tile_size)
 	ray.force_raycast_update()
-	print(ray)
-	print(ray.get_collision_normal())
-	print(ray.get_collision_point())
+#	print(ray)
+#	print(ray.get_collision_normal())
+#	print(ray.get_collision_point())
 
 	if !ray.is_colliding():
 		tween.interpolate_property(self, "position",
@@ -50,6 +51,7 @@ func move():
 		inverte_movimento()
 
 func _on_move_up(bodyName):
+	print("BBBBBB")
 	if bodyName == name:
 		velocity.x = 0
 		velocity.y = speed * -1
