@@ -9,11 +9,14 @@ onready var tween := $Tween
 var velocity = Vector2()
 var tile_size = 60
 
+var rng = RandomNumberGenerator.new()
+
 func _ready() -> void:
 	set_name("FatasmaAzul")
 	velocity.x = speed
 	sprite.play("right")
 	z_index=2
+	
 
 func _physics_process(delta):
 	if !tween.is_active():
@@ -45,3 +48,25 @@ func move():
 		tween.start()
 	else :
 		inverte_movimento()
+	
+	
+	var my_random_number = rng.randf_range(0, 1)
+	if my_random_number < 0.1:
+		var dir = rng.randi_range(0, 3)
+		match dir:
+			0:
+				velocity.x = 0
+				velocity.y = speed * -1
+			1:
+				velocity.x = 0
+				velocity.y = speed
+			2: 
+				velocity.x = speed * -1
+				velocity.y = 0
+			3:
+				velocity.x = speed
+				velocity.y = 0
+
+func _on_FantasmaAzul_body_entered(body: Node) -> void:
+	if body.name == "Pacman":
+		queue_free()

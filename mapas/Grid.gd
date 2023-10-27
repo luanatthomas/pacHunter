@@ -86,9 +86,6 @@ func _input(event):
 			selectedBlock = 0
 func posInCenter(initialPosition, b):
 	var pos = grid.map_to_world(grid.world_to_map(initialPosition))
-#	print(get_cell_autotile_coord(pos.x,pos.y))
-#	print(tile_set)
-#	print(tile_set.get_tiles_ids())
 	gridLines.get_cellv(pos)
 	b.position.x = pos.x + 30
 	b.position.y = pos.y + 30
