@@ -10,10 +10,28 @@ export (PackedScene) var blockUp : PackedScene
 export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
+export (PackedScene) var blueGhost : PackedScene
+
 var selectedBlock := 0
+
+func _ready():
+	var ghost = blueGhost.instance()
+	
+	var ghostPos = Vector2(810, 510)
+	
+	var pos = grid.map_to_world(grid.world_to_map(ghostPos))
+	gridLines.get_cellv(pos)
+	ghost.position.x = pos.x + 30
+	ghost.position.y = pos.y + 30
+	ghost.connect("tree_exited", self, "ghostKilled")
+	add_child(ghost)
 
 func isValidCell(pos: Vector2):
 	return grid.get_cellv(grid.world_to_map(pos)) == 27
+	
+func ghostKilled():
+	print("MATOU")
+	get_tree().quit()
 
 func _process(delta: float):
 	var worldSize = grid.world_to_map(get_viewport().size)
@@ -30,7 +48,7 @@ func _process(delta: float):
 	var cell = grid.world_to_map(mouse_position)
 	var tile_pos = grid.map_to_world(grid.world_to_map(mouse_position))
 	
-	print(grid.get_cellv(grid.world_to_map(mouse_position)))
+#	print(grid.get_cellv(grid.world_to_map(mouse_position)))
 	
 #	if cell.x > 0 && cell.x < quantLines && cell.y > 0 && cell. y < quantColumns && get_cellv(mouse_position) == 27:
 	if isValidCell(mouse_position):
