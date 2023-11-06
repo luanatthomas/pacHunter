@@ -1001,6 +1001,10 @@ blockUp = ExtResource( 4 )
 blockDown = ExtResource( 6 )
 blockStop = ExtResource( 13 )
 blueGhost = ExtResource( 50 )
+qntDown = 3
+qntUp = 1
+qntLeft = 2
+qntStop = 1
 
 [node name="Grid" type="TileMap" parent="."]
 tile_set = SubResource( 22 )

@@ -12,6 +12,12 @@ export (PackedScene) var blockStop : PackedScene
 
 export (PackedScene) var blueGhost : PackedScene
 
+export var qntDown : int
+export var qntUp : int
+export var qntLeft : int
+export var qntRight : int
+export var qntStop : int
+
 var selectedBlock := 0
 
 func _ready():
@@ -30,7 +36,6 @@ func isValidCell(pos: Vector2):
 	return grid.get_cellv(grid.world_to_map(pos)) == 27
 	
 func ghostKilled():
-	print("MATOU")
 	get_tree().quit()
 
 func _process(delta: float):
@@ -73,35 +78,66 @@ func _input(event):
 			
 			match selectedBlock:
 				1:
+					if qntStop == 0: return
 					var b = blockStop.instance()
 					var pos = grid.map_to_world(grid.world_to_map(event.position))
 					b = posInCenter(event.position, b)
+					b.connect("tree_exited", self, "incStop")
 					add_child(b)
+					qntStop=qntStop-1
 				2:
+					if qntDown == 0: return
 					var b = blockDown.instance()
 					var pos = grid.map_to_world(grid.world_to_map(event.position))
 					b = posInCenter(event.position, b)
 					b.connect("move_down", pacman, "_on_move_down")
+					b.connect("tree_exited", self, "incDown")
 					add_child(b)
+					qntDown=qntDown-1
 				3:
+					if qntLeft == 0: return
 					var b = blockLeft.instance()
 					var pos = grid.map_to_world(grid.world_to_map(event.position))
 					b = posInCenter(event.position, b)
 					b.connect("move_left", pacman, "_on_move_left")
+					b.connect("tree_exited", self, "incSLEft")
 					add_child(b)
+					qntLeft = qntLeft-1
 				4:
+					if qntRight == 0: return
 					var b = blockRight.instance()
 					var pos = grid.map_to_world(grid.world_to_map(event.position))
 					b = posInCenter(event.position, b)
 					b.connect("move_right", pacman, "_on_move_right")
+					b.connect("tree_exited", self, "incRight")
 					add_child(b)
+					qntRight = qntRight-1
 				5:
+					if qntUp == 0: return
 					var b = blockUp.instance()
 					b = posInCenter(event.position, b)
 					b.connect("move_up", pacman, "_on_move_up")
+					b.connect("tree_exited", self, "incUp")
 					add_child(b)
+					qntUp = qntUp -1
 				
 			selectedBlock = 0
+
+func incUp():
+	qntUp = qntUp + 1
+
+func incDown():
+	qntDown = qntDown + 1
+	
+func incLeft():
+	qntLeft = qntLeft + 1
+	
+func incRight():
+	qntRight = qntRight + 1
+
+func incStop():
+	qntStop = qntStop + 1
+	
 func posInCenter(initialPosition, b):
 	var pos = grid.map_to_world(grid.world_to_map(initialPosition))
 	gridLines.get_cellv(pos)
