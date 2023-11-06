@@ -4,6 +4,12 @@ onready var gridLines := $GridLines
 onready var grid := $Grid
 onready var pacman := $Pacman
 
+onready var lblUp := $LabelUp
+onready var lblDown := $LabelDown
+onready var lblLeft := $LabelLeft
+onready var lblRight := $LabelRight
+onready var lblStop := $LabelStop
+
 export (PackedScene) var blockLeft : PackedScene
 export (PackedScene) var blockRight : PackedScene
 export (PackedScene) var blockUp : PackedScene
@@ -33,12 +39,18 @@ func _ready():
 	add_child(ghost)
 
 func isValidCell(pos: Vector2):
-	return grid.get_cellv(grid.world_to_map(pos)) == 27
+	var gridPos = grid.world_to_map(pos)
+	return gridPos.y > 3 && grid.get_cellv(gridPos) == 27 && gridPos != grid.world_to_map(pacman.position)
 	
 func ghostKilled():
 	get_tree().quit()
 
 func _process(delta: float):
+	lblLeft.text = str(qntLeft)
+	lblStop.text = str(qntStop)
+	lblRight.text = str(qntRight)
+	lblUp.text = str(qntUp)
+	lblDown.text = str(qntDown)
 	var worldSize = grid.world_to_map(get_viewport().size)
 	var quantColumns = worldSize.y - 1
 	var quantLines = worldSize.x - 1
@@ -100,7 +112,7 @@ func _input(event):
 					var pos = grid.map_to_world(grid.world_to_map(event.position))
 					b = posInCenter(event.position, b)
 					b.connect("move_left", pacman, "_on_move_left")
-					b.connect("tree_exited", self, "incSLEft")
+					b.connect("tree_exited", self, "incLeft")
 					add_child(b)
 					qntLeft = qntLeft-1
 				4:
