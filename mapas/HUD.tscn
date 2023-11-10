@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mapas/buton_theme.tres" type="Theme" id=1]
+[ext_resource path="res://mapas/HUD.gd" type="Script" id=2]
+[ext_resource path="res://img/tela-inicial.png" type="Texture" id=3]
+
+[node name="HUD" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 750, 480 )
+texture = ExtResource( 3 )
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 458.0
+margin_top = 524.0
+margin_right = 719.0
+margin_bottom = 616.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.717647, 0.317647, 1 )
+text = "START"
+
+[node name="TutorialButton" type="Button" parent="."]
+margin_left = 783.0
+margin_top = 525.0
+margin_right = 1045.0
+margin_bottom = 615.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.717647, 0.317647, 1 )
+text = "TUTORIAL"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_TutorialButton_pressed"]
