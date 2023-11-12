@@ -17,3 +17,4 @@ func _on_StartButton_pressed() -> void:
 
 func _on_TutorialButton_pressed() -> void:
 	emit_signal("tutorial_play")
+	

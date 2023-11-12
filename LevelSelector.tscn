@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://LevelSelector.gd" type="Script" id=1]
+[ext_resource path="res://img/seletor-fases.png" type="Texture" id=2]
+[ext_resource path="res://mapas/Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://buton_theme.tres" type="Theme" id=4]
+[ext_resource path="res://mapas/Level3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mapas/Level4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://mapas/Level2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://mapas/Level10.tscn" type="PackedScene" id=8]
+[ext_resource path="res://mapas/Level9.tscn" type="PackedScene" id=9]
+[ext_resource path="res://mapas/Level7.tscn" type="PackedScene" id=10]
+[ext_resource path="res://mapas/Level8.tscn" type="PackedScene" id=11]
+[ext_resource path="res://mapas/Level5.tscn" type="PackedScene" id=12]
+[ext_resource path="res://mapas/Level6.tscn" type="PackedScene" id=13]
+
+[node name="LevelSelector" type="Node2D"]
+script = ExtResource( 1 )
+Level1 = ExtResource( 3 )
+Level2 = ExtResource( 7 )
+Level3 = ExtResource( 5 )
+Level4 = ExtResource( 6 )
+Level5 = ExtResource( 12 )
+Level6 = ExtResource( 13 )
+Level7 = ExtResource( 10 )
+Level8 = ExtResource( 11 )
+Level9 = ExtResource( 9 )
+Level10 = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 750, 480 )
+texture = ExtResource( 2 )
+
+[node name="btn_level1" type="Button" parent="."]
+margin_left = 567.0
+margin_top = 374.0
+margin_right = 661.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "1"
+
+[node name="btn_level2" type="Button" parent="."]
+margin_left = 683.0
+margin_top = 371.0
+margin_right = 777.0
+margin_bottom = 465.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "2"
+
+[node name="btn_level3" type="Button" parent="."]
+margin_left = 811.0
+margin_top = 377.0
+margin_right = 905.0
+margin_bottom = 471.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "3"
+
+[node name="btn_level4" type="Button" parent="."]
+margin_left = 572.0
+margin_top = 509.0
+margin_right = 666.0
+margin_bottom = 603.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "4"
+
+[node name="btn_level5" type="Button" parent="."]
+margin_left = 677.0
+margin_top = 497.0
+margin_right = 771.0
+margin_bottom = 591.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "5"
+
+[node name="btn_level6" type="Button" parent="."]
+margin_left = 803.0
+margin_top = 503.0
+margin_right = 897.0
+margin_bottom = 597.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "6"
+
+[node name="btn_level7" type="Button" parent="."]
+margin_left = 580.0
+margin_top = 630.0
+margin_right = 674.0
+margin_bottom = 724.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "7"
+
+[node name="btn_level8" type="Button" parent="."]
+margin_left = 699.0
+margin_top = 626.0
+margin_right = 793.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "8"
+
+[node name="btn_level9" type="Button" parent="."]
+margin_left = 809.0
+margin_top = 629.0
+margin_right = 903.0
+margin_bottom = 723.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "9"
+
+[node name="btn_level10" type="Button" parent="."]
+margin_left = 694.0
+margin_top = 747.0
+margin_right = 788.0
+margin_bottom = 841.0
+rect_min_size = Vector2( 94, 94 )
+rect_pivot_offset = Vector2( 1392, -315 )
+theme = ExtResource( 4 )
+text = "10"
+
+[connection signal="pressed" from="btn_level1" to="." method="_on_btn_level1_pressed"]
+[connection signal="pressed" from="btn_level2" to="." method="_on_btn_level2_pressed"]
+[connection signal="pressed" from="btn_level3" to="." method="_on_btn_level3_pressed"]
+[connection signal="pressed" from="btn_level4" to="." method="_on_btn_level4_pressed"]
+[connection signal="pressed" from="btn_level5" to="." method="_on_btn_level5_pressed"]
+[connection signal="pressed" from="btn_level6" to="." method="_on_btn_level6_pressed"]
+[connection signal="pressed" from="btn_level7" to="." method="_on_btn_level7_pressed"]
+[connection signal="pressed" from="btn_level8" to="." method="_on_btn_level8_pressed"]
+[connection signal="pressed" from="btn_level9" to="." method="_on_btn_level9_pressed"]
+[connection signal="pressed" from="btn_level10" to="." method="_on_btn_level10_pressed"]
