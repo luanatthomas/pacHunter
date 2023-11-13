@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://buton_theme.tres" type="Theme" id=1]
+[ext_resource path="res://img/tela-inicial.png" type="Texture" id=2]
+[ext_resource path="res://TutorialSelector.gd" type="Script" id=3]
+[ext_resource path="res://fonts/Iceland-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="TutorialSelector" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 753, 481 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 612.0
+anchor_top = 384.0
+anchor_right = 706.0
+anchor_bottom = 478.0
+margin_left = 612.0
+margin_top = 384.0
+margin_right = 706.0
+margin_bottom = 478.0
+theme = ExtResource( 1 )
+text = "1"
+
+[node name="btn_tutorial1" type="Label" parent="."]
+margin_left = 617.0
+margin_top = 275.0
+margin_right = 908.0
+margin_bottom = 314.0
+custom_fonts/font = SubResource( 1 )
+text = "Escolha o Turotial:"

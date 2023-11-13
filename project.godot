@@ -12,7 +12,12 @@ config_version=4
 
 config/name="pacHunter"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://img/icon.png"
+
+[display]
+
+window/size/width=1500
+window/size/height=960
 
 [gui]
 
