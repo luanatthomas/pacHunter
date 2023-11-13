@@ -6,7 +6,7 @@
 [ext_resource path="res://objetos/BlocoCima.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objetos/BlocoDireita.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objetos/BlocoBaixo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://mapas/Grid.gd" type="Script" id=7]
+[ext_resource path="res://mapas/Level1.gd" type="Script" id=7]
 [ext_resource path="res://img/blocos/LeftA.png" type="Texture" id=8]
 [ext_resource path="res://img/blocos/RightA.png" type="Texture" id=9]
 [ext_resource path="res://img/blocos/DownA.png" type="Texture" id=10]
@@ -1087,10 +1087,10 @@ blockDown = ExtResource( 6 )
 blockStop = ExtResource( 13 )
 blueGhost = ExtResource( 50 )
 qntDown = 3
-qntUp = 1
-qntLeft = 2
-qntRight = 1
-qntStop = 1
+qntUp = 3
+qntLeft = 1
+qntRight = 4
+qntStop = 5
 
 [node name="Grid" type="TileMap" parent="."]
 tile_set = SubResource( 22 )
