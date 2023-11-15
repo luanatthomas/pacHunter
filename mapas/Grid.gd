@@ -2,7 +2,7 @@ extends Node2D
 
 onready var gridLines := $GridLines
 onready var grid := $Grid
-onready var pacman := $Pacman
+onready var pacman:  KinematicBody2D = $Pacman 
 
 onready var lblUp := $LabelUp
 onready var lblDown := $LabelDown

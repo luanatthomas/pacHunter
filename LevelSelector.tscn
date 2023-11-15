@@ -42,90 +42,90 @@ theme = ExtResource( 4 )
 text = "1"
 
 [node name="btn_level2" type="Button" parent="."]
-margin_left = 683.0
-margin_top = 371.0
-margin_right = 777.0
-margin_bottom = 465.0
+margin_left = 705.0
+margin_top = 376.0
+margin_right = 799.0
+margin_bottom = 470.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "2"
 
 [node name="btn_level3" type="Button" parent="."]
-margin_left = 811.0
-margin_top = 377.0
-margin_right = 905.0
-margin_bottom = 471.0
+margin_left = 846.0
+margin_top = 376.0
+margin_right = 940.0
+margin_bottom = 470.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "3"
 
 [node name="btn_level4" type="Button" parent="."]
-margin_left = 572.0
-margin_top = 509.0
-margin_right = 666.0
-margin_bottom = 603.0
+margin_left = 564.0
+margin_top = 517.0
+margin_right = 658.0
+margin_bottom = 611.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "4"
 
 [node name="btn_level5" type="Button" parent="."]
-margin_left = 677.0
-margin_top = 497.0
-margin_right = 771.0
-margin_bottom = 591.0
+margin_left = 705.0
+margin_top = 517.0
+margin_right = 799.0
+margin_bottom = 611.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "5"
 
 [node name="btn_level6" type="Button" parent="."]
-margin_left = 803.0
-margin_top = 503.0
-margin_right = 897.0
-margin_bottom = 597.0
+margin_left = 846.0
+margin_top = 517.0
+margin_right = 940.0
+margin_bottom = 611.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "6"
 
 [node name="btn_level7" type="Button" parent="."]
-margin_left = 580.0
-margin_top = 630.0
-margin_right = 674.0
-margin_bottom = 724.0
+margin_left = 564.0
+margin_top = 658.0
+margin_right = 658.0
+margin_bottom = 752.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "7"
 
 [node name="btn_level8" type="Button" parent="."]
-margin_left = 699.0
-margin_top = 626.0
-margin_right = 793.0
-margin_bottom = 720.0
+margin_left = 705.0
+margin_top = 658.0
+margin_right = 799.0
+margin_bottom = 752.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "8"
 
 [node name="btn_level9" type="Button" parent="."]
-margin_left = 809.0
-margin_top = 629.0
-margin_right = 903.0
-margin_bottom = 723.0
+margin_left = 846.0
+margin_top = 658.0
+margin_right = 940.0
+margin_bottom = 752.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )
 text = "9"
 
 [node name="btn_level10" type="Button" parent="."]
-margin_left = 694.0
-margin_top = 747.0
-margin_right = 788.0
-margin_bottom = 841.0
+margin_left = 705.0
+margin_top = 799.0
+margin_right = 799.0
+margin_bottom = 893.0
 rect_min_size = Vector2( 94, 94 )
 rect_pivot_offset = Vector2( 1392, -315 )
 theme = ExtResource( 4 )

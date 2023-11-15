@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://LevelSelector.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TutorialSelector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=5]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
 LevelSelector = ExtResource( 2 )
+TutorialSelector = ExtResource( 3 )
 
 [node name="HUD" parent="." instance=ExtResource( 1 )]
 
