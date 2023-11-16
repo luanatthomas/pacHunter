@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var speed = 1
+export (Vector2) var direction = Vector2(1,0)
 
 onready var sprite := $AnimatedSprite
 onready var ray := $RayCast2D
@@ -13,7 +13,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	set_name("FatasmaAzul")
-	velocity.x = speed
+	velocity = direction/direction.length()
 	sprite.play("right")
 	z_index=2
 	
@@ -48,23 +48,22 @@ func move():
 		tween.start()
 	else :
 		inverte_movimento()
-	
-	
+
 	var my_random_number = rng.randf_range(0, 1)
 	if my_random_number < 0.1:
 		var dir = rng.randi_range(0, 3)
 		match dir:
 			0:
 				velocity.x = 0
-				velocity.y = speed * -1
+				velocity.y = -1
 			1:
 				velocity.x = 0
-				velocity.y = speed
+				velocity.y = 1
 			2: 
-				velocity.x = speed * -1
+				velocity.x = -1
 				velocity.y = 0
 			3:
-				velocity.x = speed
+				velocity.x = 1
 				velocity.y = 0
 
 func _on_FantasmaAzul_body_entered(body: Node) -> void:
