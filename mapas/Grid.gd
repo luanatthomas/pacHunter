@@ -16,7 +16,7 @@ export (PackedScene) var blockUp : PackedScene
 export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
-export (PackedScene) var blueGhost : PackedScene
+#export (PackedScene) var blueGhost : PackedScene
 
 export var qntDown : int
 export var qntUp : int
@@ -24,28 +24,27 @@ export var qntLeft : int
 export var qntRight : int
 export var qntStop : int
 
+export var qntGhost : int
+
 var selectedBlock := 0
 
-func _ready():
-	var ghost = blueGhost.instance()
-	
-	var ghostPos = Vector2(810, 510)
-	
-	var pos = grid.map_to_world(grid.world_to_map(ghostPos))
-	gridLines.get_cellv(pos)
-	ghost.position.x = pos.x + 30
-	ghost.position.y = pos.y + 30
-	ghost.connect("tree_exited", self, "ghostKilled")
-	add_child(ghost)
-
-func isValidCell(pos: Vector2):
-	var gridPos = grid.world_to_map(pos)
-	return gridPos.y > 3 && grid.get_cellv(gridPos) == 27 && gridPos != grid.world_to_map(pacman.position)
-	
-func ghostKilled():
-	get_tree().quit()
+#func _ready():
+#	var ghost = blueGhost.instance()
+#
+#	var ghostPos = Vector2(810, 510)
+#
+#	var pos = grid.map_to_world(grid.world_to_map(ghostPos))
+#	gridLines.get_cellv(pos)
+#	ghost.position.x = pos.x + 30
+#	ghost.position.y = pos.y + 30
+#	ghost.connect("tree_exited", self, "ghostKilled")
+#	add_child(ghost)
 
 func _process(delta: float):
+	print(qntGhost)
+	if qntGhost <= 0:
+		levelSuccess()
+	
 	lblLeft.text = str(qntLeft)
 	lblStop.text = str(qntStop)
 	lblRight.text = str(qntRight)
@@ -135,6 +134,20 @@ func _input(event):
 				
 			selectedBlock = 0
 
+func _on_Ghost_tree_exited():
+	print("Saiu")
+	qntGhost = qntGhost -1
+
+func levelSuccess():
+	get_tree().quit()
+
+func levelFail():
+	get_tree().quit()
+
+func isValidCell(pos: Vector2):
+	var gridPos = grid.world_to_map(pos)
+	return gridPos.y > 3 && grid.get_cellv(gridPos) == 27 && gridPos != grid.world_to_map(pacman.position)
+
 func incUp():
 	qntUp = qntUp + 1
 
@@ -159,3 +172,11 @@ func posInCenter(initialPosition, b):
 	b.z_index=0
 	
 	return b
+
+func posGhost(initialPosition, ghost):
+	var pos = grid.map_to_world(grid.world_to_map(initialPosition))
+	gridLines.get_cellv(pos)
+	ghost.position.x = pos.x + 30
+	ghost.position.y = pos.y + 30
+	
+	return ghost

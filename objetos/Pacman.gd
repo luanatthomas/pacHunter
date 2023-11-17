@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 1
+export (Vector2) var direction = Vector2(1,0)
 
 onready var sprite := $AnimatedSprite
 onready var ray := $RayCast2D
@@ -11,7 +11,7 @@ var tile_size = 60
 
 func _ready() -> void:
 	set_name("Pacman")
-	velocity.x = speed
+	velocity = direction/direction.length()
 	sprite.play("right")
 	z_index=2
 
@@ -51,20 +51,20 @@ func _on_move_up(bodyName):
 #	print("BBBBBB")
 	if bodyName == name:
 		velocity.x = 0
-		velocity.y = speed * -1
+		velocity.y = -1
 
 func _on_move_right(bodyName):
 	if bodyName == name:
-		velocity.x = speed
+		velocity.x = 1
 		velocity.y = 0
 
 func _on_move_left(bodyName):
 	if bodyName == name:
-		velocity.x = speed * -1
+		velocity.x = -1
 		velocity.y = 0
 
 
 func _on_move_down(bodyName):
 	if bodyName == name:
 		velocity.x = 0
-		velocity.y = speed
+		velocity.y = 1
