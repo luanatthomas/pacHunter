@@ -16,7 +16,9 @@ export (PackedScene) var blockUp : PackedScene
 export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
-#export (PackedScene) var blueGhost : PackedScene
+
+export (PackedScene) var backScene : PackedScene
+
 
 export var qntDown : int
 export var qntUp : int
@@ -168,3 +170,10 @@ func posGhost(initialPosition, ghost):
 	ghost.position.y = pos.y + 30
 	
 	return ghost
+
+func _on_btn_voltar_pressed():
+	pass # Replace with function body.
+
+func _on_btn_back_pressed():
+	get_tree().change_scene_to(backScene)
+	pass # Replace with function body.
