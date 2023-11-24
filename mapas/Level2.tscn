@@ -1246,9 +1246,9 @@ blockRight = ExtResource( 5 )
 blockUp = ExtResource( 4 )
 blockDown = ExtResource( 6 )
 blockStop = ExtResource( 13 )
-qntDown = 1
+qntDown = 3
 qntUp = 1
-qntLeft = 1
+qntLeft = 2
 qntRight = 1
 qntStop = 1
 qntGhost = 2
@@ -1342,3 +1342,4 @@ position = Vector2( 750, 630 )
 
 [connection signal="tree_exited" from="FantasmaAzul" to="." method="_on_Ghost_tree_exited"]
 [connection signal="tree_exited" from="FantasmaAzul2" to="." method="_on_Ghost_tree_exited"]
+[connection signal="pacmanColide" from="Serra" to="." method="levelFail"]
