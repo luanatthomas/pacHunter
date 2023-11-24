@@ -62,7 +62,8 @@
 [ext_resource path="res://img/tiles/40.png" type="Texture" id=60]
 [ext_resource path="res://img/tiles/41.png" type="Texture" id=61]
 [ext_resource path="res://img/tiles/42.png" type="Texture" id=62]
-[ext_resource path="res://Serra.tscn" type="PackedScene" id=63]
+[ext_resource path="res://SerraLinha.tscn" type="PackedScene" id=63]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )

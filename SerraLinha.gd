@@ -22,7 +22,9 @@ func setPointEnd(pointEnd: Vector2):
 func startTween():
 	tween.interpolate_property($Serra, "position", posInit, posEnd, 1.5, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
-	
+
+func _ready():
+	line.add_point(Vector2(0,0))
 
 func _process(delta):	
 	serra.rotate(0.3)

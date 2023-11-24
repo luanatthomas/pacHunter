@@ -28,18 +28,6 @@ export var qntGhost : int
 
 var selectedBlock := 0
 
-#func _ready():
-#	var ghost = blueGhost.instance()
-#
-#	var ghostPos = Vector2(810, 510)
-#
-#	var pos = grid.map_to_world(grid.world_to_map(ghostPos))
-#	gridLines.get_cellv(pos)
-#	ghost.position.x = pos.x + 30
-#	ghost.position.y = pos.y + 30
-#	ghost.connect("tree_exited", self, "ghostKilled")
-#	add_child(ghost)
-
 func _process(delta: float):
 	print(qntGhost)
 	if qntGhost <= 0:

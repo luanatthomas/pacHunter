@@ -1,8 +1,5 @@
 extends Node2D
 
-onready var tile = $TileMap
-onready var pacman = $KinematicBody2D
-
 export (PackedScene) var LevelSelector : PackedScene
 export (PackedScene) var TutorialSelector : PackedScene
 
