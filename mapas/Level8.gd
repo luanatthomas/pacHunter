@@ -1,4 +1,4 @@
-extends 'res://mapas/Grid.gd'
+	extends 'res://mapas/Grid.gd'
 
 onready var serra1 := $SerraLinha1
 onready var serra2 := $SerraLinha2

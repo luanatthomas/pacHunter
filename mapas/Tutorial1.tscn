@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://objetos/Pacman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objetos/BlocoEsquerda.tscn" type="PackedScene" id=2]
@@ -62,7 +62,6 @@
 [ext_resource path="res://img/tiles/40.png" type="Texture" id=60]
 [ext_resource path="res://img/tiles/41.png" type="Texture" id=61]
 [ext_resource path="res://img/tiles/42.png" type="Texture" id=62]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=63]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )
@@ -1246,7 +1245,6 @@ blockRight = ExtResource( 5 )
 blockUp = ExtResource( 4 )
 blockDown = ExtResource( 6 )
 blockStop = ExtResource( 13 )
-backScene = ExtResource( 63 )
 qntDown = 3
 qntUp = 1
 qntLeft = 2
@@ -1335,6 +1333,7 @@ margin_left = 52.0
 margin_top = 30.0
 margin_right = 94.0
 margin_bottom = 108.0
+mouse_default_cursor_shape = 2
 theme = ExtResource( 50 )
 text = "<"
 

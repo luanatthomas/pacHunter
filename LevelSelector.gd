@@ -10,6 +10,7 @@ export (PackedScene) var Level7 : PackedScene
 export (PackedScene) var Level8 : PackedScene
 export (PackedScene) var Level9 : PackedScene
 export (PackedScene) var Level10 : PackedScene
+#var Level10 = load("res://mapas/Level10.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

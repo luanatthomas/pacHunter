@@ -17,8 +17,9 @@ export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
 
-export (PackedScene) var backScene : PackedScene
+#export (PackedScene) var backScene : PackedScene
 
+var backScene = load("res://Main.tscn")
 
 export var qntDown : int
 export var qntUp : int

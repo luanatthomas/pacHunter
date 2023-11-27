@@ -63,7 +63,7 @@
 [ext_resource path="res://img/tiles/41.png" type="Texture" id=61]
 [ext_resource path="res://img/tiles/42.png" type="Texture" id=62]
 [ext_resource path="res://objetos/FantasmaAzul.tscn" type="PackedScene" id=63]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=64]
+[ext_resource path="res://btn_voltar.tres" type="Theme" id=65]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )
@@ -1248,7 +1248,6 @@ blockRight = ExtResource( 5 )
 blockUp = ExtResource( 4 )
 blockDown = ExtResource( 6 )
 blockStop = ExtResource( 13 )
-backScene = ExtResource( 64 )
 qntDown = 3
 qntUp = 1
 qntLeft = 2
@@ -1344,6 +1343,16 @@ position = Vector2( 1110, 450 )
 [node name="FantasmaAzul" parent="." instance=ExtResource( 63 )]
 position = Vector2( 90, 870 )
 
+[node name="btn_back" type="Button" parent="."]
+margin_left = 52.0
+margin_top = 30.0
+margin_right = 94.0
+margin_bottom = 108.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 65 )
+text = "<"
+
 [connection signal="pacmanColide" from="SerraLinha1" to="." method="levelFail"]
 [connection signal="pacmanColide" from="SerraLinha2" to="." method="levelFail"]
 [connection signal="pacmanColide" from="SerraLinha3" to="." method="levelFail"]
+[connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
