@@ -1247,7 +1247,6 @@ __meta__ = {
 "_edit_vertical_guides_": [  ],
 "_editor_description_": ""
 }
-actualLevel = 10
 blockLeft = ExtResource( 2 )
 blockRight = ExtResource( 5 )
 blockUp = ExtResource( 4 )

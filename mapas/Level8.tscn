@@ -1336,7 +1336,7 @@ valign = 2
 uppercase = true
 
 [node name="FantasmaAzul" parent="." instance=ExtResource( 50 )]
-position = Vector2( 1290, 273 )
+position = Vector2( 1290, 270 )
 
 [node name="SerraLinha1" parent="." instance=ExtResource( 63 )]
 position = Vector2( 90, 570 )
