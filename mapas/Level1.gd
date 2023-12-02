@@ -1,5 +1,17 @@
 extends 'Grid.gd'
 
+#func _on_btn_voltar_pressed():
+#	pass # Replace with function body.
+#
+#func _on_btn_back_pressed():
+#	get_tree().change_scene_to(backScene)
+#	pass # Replace with function body.#func _on_btn_voltar_pressed():
+#	pass # Replace with function body.
+#
+#func _on_btn_back_pressed():
+#	get_tree().change_scene_to(backScene)
+#	pass # Replace with function body.extends 'Grid.gd'
+
 #var blueGhost = preload("res://objetos/FantasmaAzul.tscn")
 #
 #func _ready():

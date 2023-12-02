@@ -10,16 +10,23 @@ onready var lblLeft := $LabelLeft
 onready var lblRight := $LabelRight
 onready var lblStop := $LabelStop
 
+export var actualLevel : int
+
 export (PackedScene) var blockLeft : PackedScene
 export (PackedScene) var blockRight : PackedScene
 export (PackedScene) var blockUp : PackedScene
 export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
-
 #export (PackedScene) var backScene : PackedScene
 
 var backScene = load("res://Main.tscn")
+var nextScene = ""
+
+#em qualquer fase, quando o pacman morrer, vai para a tela de GameOver (gameFail)
+#de 1 a 9, quando pacman ganhar, vai para a próxima fase (1>2 2>3 3>4 ...) (levelX)
+#na fase 10, quando pacman ganhar, vai para tela de GameSuccess (gameSuccess)
+
 
 export var qntDown : int
 export var qntUp : int
@@ -32,6 +39,20 @@ export var qntGhost : int
 var selectedBlock := 0
 
 func _process(delta: float):
+	
+	var timeLeft = $Timer.time_left 
+	var mins = int(timeLeft)/60
+	var secs = int(timeLeft) - (60*mins)
+	
+	$TimerLabel.text = String(mins)+":"+String(secs)
+	
+	if mins < 1 and secs <= 30:
+		$TimerLabel.add_color_override("font_color", Color(1,0,0,1))
+	
+	if mins == 0 and secs == 0:
+		print("Acabou o tempo")
+		levelFail()
+	
 	print(qntGhost)
 	if qntGhost <= 0:
 		levelSuccess()
@@ -44,7 +65,6 @@ func _process(delta: float):
 	var worldSize = grid.world_to_map(get_viewport().size)
 	var quantColumns = worldSize.y - 1
 	var quantLines = worldSize.x - 1
-
 
 	gridLines.clear()
 #	for l in range(1, quantLines):
@@ -130,9 +150,15 @@ func _on_Ghost_tree_exited():
 	qntGhost = qntGhost -1
 
 func levelSuccess():
-	get_tree().quit()
+	if actualLevel != 10:
+		nextScene = load("res://mapas/Level"+String(actualLevel+1)+".tscn")
+	else:
+		nextScene = load("res://GameSuccess.tscn")
+	get_tree().change_scene_to(nextScene)
+	#get_tree().quit()
 
 func levelFail():
+	nextScene = load("res://GameOver.tscn")
 	get_tree().quit()
 
 func isValidCell(pos: Vector2):

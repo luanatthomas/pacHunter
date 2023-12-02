@@ -12,6 +12,8 @@ export (PackedScene) var Level9 : PackedScene
 export (PackedScene) var Level10 : PackedScene
 #var Level10 = load("res://mapas/Level10.tscn")
 
+var backScene = load("res://Main.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -54,4 +56,11 @@ func _on_btn_level9_pressed() -> void:
 	
 func _on_btn_level10_pressed() -> void:
 	get_tree().change_scene_to(Level10)
+	pass # Replace with function body.
+
+#func _on_btn_voltar_pressed():
+#	pass # Replace with function body.
+#
+func _on_btn_back_pressed():
+	get_tree().change_scene_to(backScene)
 	pass # Replace with function body.
