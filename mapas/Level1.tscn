@@ -1349,7 +1349,7 @@ theme = ExtResource( 64 )
 text = "<"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 90.0
 one_shot = true
 autostart = true
 

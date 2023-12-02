@@ -38,6 +38,9 @@ func update_sprite():
 		sprite.play("down")
 
 func move():
+	if direction == Vector2(0,0):
+		return
+	
 	ray.set_cast_to(velocity * tile_size)
 	ray.force_raycast_update()
 

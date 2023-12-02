@@ -163,7 +163,10 @@ func levelFail():
 
 func isValidCell(pos: Vector2):
 	var gridPos = grid.world_to_map(pos)
-	return gridPos.y > 3 && grid.get_cellv(gridPos) == 27 && gridPos != grid.world_to_map(pacman.position)
+	
+	
+	
+	return gridPos.y > 3 && (grid.get_cellv(gridPos) == 27 || (grid.get_cellv(gridPos) >= 43 && grid.get_cellv(gridPos) <= 47 )) && gridPos != grid.world_to_map(pacman.position)
 
 func incUp():
 	qntUp = qntUp + 1

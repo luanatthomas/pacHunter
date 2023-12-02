@@ -1335,7 +1335,7 @@ valign = 2
 uppercase = true
 
 [node name="FantasmaAzul" parent="." instance=ExtResource( 50 )]
-position = Vector2( 243, 840 )
+position = Vector2( 270, 870 )
 direction = Vector2( -1, 0 )
 
 [node name="btn_back" type="Button" parent="."]
@@ -1348,7 +1348,7 @@ theme = ExtResource( 64 )
 text = "<"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 35.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
