@@ -14,7 +14,9 @@ onready var popupGameover := $PopUpGameOver
 onready var popupWin := $PopUpWin
 
 onready var popupBackPS := load("res://objetos/PopUpBack.tscn")
+onready var popupTutorialPS := load("res://objetos/PopUpTutorial.tscn")
 var popupBack : PopupDialog
+var popupTutorial : PopupDialog
 
 export var actualLevel : int
 
@@ -48,10 +50,13 @@ func _ready():
 	grid.z_index = -1
 	gridLines.z_index = -1
 	z_index = -1
+	popupTutorial = popupTutorialPS.instance()
+	popupTutorial.connect("popup_hide", self, "_on_popup_hide")
 	popupBack = popupBackPS.instance()
 	popupBack.connect("restart", self, "_on_restart")
 	popupBack.connect("popup_hide", self, "_on_popup_hide")
 	add_child(popupBack)
+	add_child(popupTutorial)
 
 func _process(delta: float):
 	
@@ -72,6 +77,7 @@ func _process(delta: float):
 	if qntGhost <= 0:
 		levelSuccess()
 	
+	popupTutorial.popup()
 	lblLeft.text = str(qntLeft)
 	lblStop.text = str(qntStop)
 	lblRight.text = str(qntRight)
@@ -95,6 +101,7 @@ func _process(delta: float):
 #	if cell.x > 0 && cell.x < quantLines && cell.y > 0 && cell. y < quantColumns && get_cellv(mouse_position) == 27:
 	if isValidCell(mouse_position):
 		gridLines.set_cellv(cell, selectedBlock)
+		
 
 func _input(event):
 	if event is InputEventKey:
@@ -239,3 +246,4 @@ func _on_PopUpWin_popup_hide():
 
 func _on_popup_hide():
 	get_tree().paused = false
+

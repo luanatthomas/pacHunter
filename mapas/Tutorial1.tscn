@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://objetos/Pacman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objetos/BlocoEsquerda.tscn" type="PackedScene" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://objetos/FantasmaAzul.tscn" type="PackedScene" id=63]
 [ext_resource path="res://objetos/PopUpGameOver.tscn" type="PackedScene" id=64]
 [ext_resource path="res://objetos/PopUpWin.tscn" type="PackedScene" id=65]
+[ext_resource path="res://objetos/PopUpTutorial.tscn" type="PackedScene" id=66]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )
@@ -1364,9 +1365,16 @@ direction = Vector2( 0, 0 )
 
 [node name="PopUpWin" parent="." instance=ExtResource( 65 )]
 
+[node name="PopUpTutorial" parent="." instance=ExtResource( 66 )]
+margin_left = 394.0
+margin_top = 192.0
+margin_right = 1121.0
+margin_bottom = 790.0
+
 [connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
 [connection signal="tree_exited" from="FantasmaAzul" to="." method="_on_Ghost_tree_exited"]
 [connection signal="popup_hide" from="PopUpGameOver" to="." method="_on_PopUpGameOver_hide"]
 [connection signal="restart" from="PopUpGameOver" to="." method="_on_restart"]
 [connection signal="popup_hide" from="PopUpWin" to="." method="_on_PopUpWin_popup_hide"]
 [connection signal="restart" from="PopUpWin" to="." method="_on_restart"]
+[connection signal="popup_hide" from="PopUpTutorial" to="." method="_on_PopUpTutorial_popup_hide"]
