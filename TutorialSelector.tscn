@@ -20,7 +20,7 @@ Tutorial2 = ExtResource( 8 )
 Tutorial3 = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 753, 481 )
+position = Vector2( 750, 480 )
 texture = ExtResource( 2 )
 
 [node name="btn_tutorial1" type="Button" parent="."]

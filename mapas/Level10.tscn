@@ -1373,6 +1373,8 @@ custom_fonts/font = SubResource( 61 )
 [node name="PopUpWin" parent="." instance=ExtResource( 66 )]
 
 [connection signal="tree_exited" from="FantasmaAzul" to="." method="_on_Ghost_tree_exited"]
+[connection signal="pacmanColide" from="SerraLinha1" to="." method="levelFail"]
+[connection signal="pacmanColide" from="SerraLinha2" to="." method="levelFail"]
 [connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
 [connection signal="popup_hide" from="PopUpGameOver" to="." method="_on_PopUpGameOver_hide"]
 [connection signal="restart" from="PopUpGameOver" to="." method="_on_restart"]
