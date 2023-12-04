@@ -13,7 +13,7 @@ func _ready() -> void:
 	set_name("Pacman")
 	velocity = direction/direction.length()
 	sprite.play("right")
-	z_index=2
+	z_index=0
 
 func _physics_process(delta):
 	

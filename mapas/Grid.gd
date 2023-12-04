@@ -10,6 +10,8 @@ onready var lblLeft := $LabelLeft
 onready var lblRight := $LabelRight
 onready var lblStop := $LabelStop
 
+onready var popupGameover := $PopUpGameOver
+
 export var actualLevel : int
 
 export (PackedScene) var blockLeft : PackedScene
@@ -37,6 +39,11 @@ export var qntStop : int
 export var qntGhost : int
 
 var selectedBlock := 0
+
+func _ready():
+	grid.z_index = -1
+	gridLines.z_index = -1
+	z_index = -1
 
 func _process(delta: float):
 	
@@ -158,8 +165,10 @@ func levelSuccess():
 	#get_tree().quit()
 
 func levelFail():
-	nextScene = load("res://GameOver.tscn")
-	get_tree().quit()
+	get_tree().paused = true
+	popupGameover.popup()
+#	nextScene = load("res://GameOver.tscn")
+#	get_tree().quit()
 
 func isValidCell(pos: Vector2):
 	var gridPos = grid.world_to_map(pos)
@@ -189,7 +198,7 @@ func posInCenter(initialPosition, b):
 	b.position.x = pos.x + 30
 	b.position.y = pos.y + 30
 	
-	b.z_index=0
+	b.z_index=-1
 	
 	return b
 
@@ -206,4 +215,11 @@ func _on_btn_voltar_pressed():
 
 func _on_btn_back_pressed():
 	get_tree().change_scene_to(backScene)
+	pass # Replace with function body.
+
+func _on_PopUpGameOver_hide():
+	get_tree().paused = false
+
+func _on_restart():
+	get_tree().reload_current_scene()
 	pass # Replace with function body.
