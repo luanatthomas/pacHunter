@@ -13,6 +13,9 @@ onready var lblStop := $LabelStop
 onready var popupGameover := $PopUpGameOver
 onready var popupWin := $PopUpWin
 
+onready var popupBackPS := load("res://objetos/PopUpBack.tscn")
+var popupBack : PopupDialog
+
 export var actualLevel : int
 
 export (PackedScene) var blockLeft : PackedScene
@@ -45,6 +48,10 @@ func _ready():
 	grid.z_index = -1
 	gridLines.z_index = -1
 	z_index = -1
+	popupBack = popupBackPS.instance()
+	popupBack.connect("restart", self, "_on_restart")
+	popupBack.connect("popup_hide", self, "_on_popup_hide")
+	add_child(popupBack)
 
 func _process(delta: float):
 	
@@ -217,8 +224,9 @@ func _on_btn_voltar_pressed():
 	pass # Replace with function body.
 
 func _on_btn_back_pressed():
-	get_tree().change_scene_to(backScene)
-	pass # Replace with function body.
+	get_tree().paused = true
+	popupBack.popup()
+#	get_tree().change_scene_to(backScene)
 
 func _on_PopUpGameOver_hide():
 	get_tree().paused = false
@@ -227,4 +235,7 @@ func _on_restart():
 	get_tree().reload_current_scene()
 
 func _on_PopUpWin_popup_hide():
+	get_tree().paused = false
+
+func _on_popup_hide():
 	get_tree().paused = false
