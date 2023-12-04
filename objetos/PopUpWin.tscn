@@ -2,9 +2,9 @@
 
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://buton_theme.tres" type="Theme" id=2]
-[ext_resource path="res://objetos/PopUp.gd" type="Script" id=3]
-[ext_resource path="res://img/restart.png" type="Texture" id=4]
-[ext_resource path="res://img/home.png" type="Texture" id=5]
+[ext_resource path="res://img/restart.png" type="Texture" id=3]
+[ext_resource path="res://img/home.png" type="Texture" id=4]
+[ext_resource path="res://objetos/PopUp.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 68
@@ -26,21 +26,24 @@ corner_radius_bottom_left = 16
 Label/fonts/font = SubResource( 1 )
 PopupDialog/styles/panel = SubResource( 2 )
 
-[node name="PopUpGameOver" type="PopupDialog"]
+[node name="PopUpWin" type="PopupDialog"]
 margin_left = 388.0
 margin_top = 279.0
 margin_right = 1111.0
 margin_bottom = 681.0
 theme = SubResource( 3 )
 popup_exclusive = true
-script = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 6.0
 margin_top = 90.0
 margin_right = 721.0
 margin_bottom = 210.0
-text = "GAME OVER"
+text = "Você Venceu!"
 align = 1
 
 [node name="btn_home" type="Button" parent="."]
@@ -50,7 +53,7 @@ margin_right = 282.0
 margin_bottom = 329.0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 2 )
-icon = ExtResource( 5 )
+icon = ExtResource( 4 )
 icon_align = 1
 
 [node name="btn_restart" type="Button" parent="."]
@@ -60,7 +63,7 @@ margin_right = 517.0
 margin_bottom = 329.0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 2 )
-icon = ExtResource( 4 )
+icon = ExtResource( 3 )
 icon_align = 1
 
 [connection signal="pressed" from="btn_home" to="." method="_on_btn_home_pressed"]

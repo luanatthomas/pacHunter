@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://objetos/Pacman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objetos/BlocoEsquerda.tscn" type="PackedScene" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://objetos/FantasmaAzul.tscn" type="PackedScene" id=63]
 [ext_resource path="res://objetos/PopUpGameOver.tscn" type="PackedScene" id=64]
 [ext_resource path="res://btn_voltar.tres" type="Theme" id=65]
+[ext_resource path="res://objetos/PopUpWin.tscn" type="PackedScene" id=66]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )
@@ -1371,6 +1372,8 @@ autostart = true
 
 [node name="PopUpGameOver" parent="." instance=ExtResource( 64 )]
 
+[node name="PopUpWin" parent="." instance=ExtResource( 66 )]
+
 [connection signal="pacmanColide" from="SerraLinha1" to="." method="levelFail"]
 [connection signal="pacmanColide" from="SerraLinha2" to="." method="levelFail"]
 [connection signal="pacmanColide" from="SerraLinha3" to="." method="levelFail"]
@@ -1378,3 +1381,5 @@ autostart = true
 [connection signal="pressed" from="btn_back" to="." method="_on_btn_back_pressed"]
 [connection signal="popup_hide" from="PopUpGameOver" to="." method="_on_PopUpGameOver_hide"]
 [connection signal="restart" from="PopUpGameOver" to="." method="_on_restart"]
+[connection signal="popup_hide" from="PopUpWin" to="." method="_on_PopUpWin_popup_hide"]
+[connection signal="restart" from="PopUpWin" to="." method="_on_restart"]

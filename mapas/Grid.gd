@@ -11,6 +11,7 @@ onready var lblRight := $LabelRight
 onready var lblStop := $LabelStop
 
 onready var popupGameover := $PopUpGameOver
+onready var popupWin := $PopUpWin
 
 export var actualLevel : int
 
@@ -157,11 +158,15 @@ func _on_Ghost_tree_exited():
 	qntGhost = qntGhost -1
 
 func levelSuccess():
-	if actualLevel != 10:
-		nextScene = load("res://mapas/Level"+String(actualLevel+1)+".tscn")
-	else:
-		nextScene = load("res://GameSuccess.tscn")
-	get_tree().change_scene_to(nextScene)
+	get_tree().paused = true
+	popupWin.popup()
+	
+#	if actualLevel != 10:
+#		nextScene = load("res://mapas/Level"+String(actualLevel+1)+".tscn")
+#	else:
+#		nextScene = load("res://GameSuccess.tscn")
+#	get_tree().change_scene_to(nextScene)
+
 	#get_tree().quit()
 
 func levelFail():
@@ -172,8 +177,6 @@ func levelFail():
 
 func isValidCell(pos: Vector2):
 	var gridPos = grid.world_to_map(pos)
-	
-	
 	
 	return gridPos.y > 3 && (grid.get_cellv(gridPos) == 27 || (grid.get_cellv(gridPos) >= 43 && grid.get_cellv(gridPos) <= 47 )) && gridPos != grid.world_to_map(pacman.position)
 
@@ -222,4 +225,6 @@ func _on_PopUpGameOver_hide():
 
 func _on_restart():
 	get_tree().reload_current_scene()
-	pass # Replace with function body.
+
+func _on_PopUpWin_popup_hide():
+	get_tree().paused = false

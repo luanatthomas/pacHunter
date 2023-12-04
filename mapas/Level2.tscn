@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://objetos/Pacman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objetos/BlocoEsquerda.tscn" type="PackedScene" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://SerraLinha.tscn" type="PackedScene" id=63]
 [ext_resource path="res://objetos/PopUpGameOver.tscn" type="PackedScene" id=64]
 [ext_resource path="res://btn_voltar.tres" type="Theme" id=65]
+[ext_resource path="res://objetos/PopUpWin.tscn" type="PackedScene" id=66]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 60, 0, 60, 60, 0, 60 )
@@ -1369,6 +1370,8 @@ custom_fonts/font = SubResource( 61 )
 
 [node name="PopUpGameOver" parent="." instance=ExtResource( 64 )]
 
+[node name="PopUpWin" parent="." instance=ExtResource( 66 )]
+
 [connection signal="tree_exited" from="FantasmaAzul" to="." method="_on_Ghost_tree_exited"]
 [connection signal="tree_exited" from="FantasmaAzul2" to="." method="_on_Ghost_tree_exited"]
 [connection signal="pacmanColide" from="Serra" to="." method="levelFail"]
@@ -1376,3 +1379,5 @@ custom_fonts/font = SubResource( 61 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="popup_hide" from="PopUpGameOver" to="." method="_on_PopUpGameOver_hide"]
 [connection signal="restart" from="PopUpGameOver" to="." method="_on_restart"]
+[connection signal="popup_hide" from="PopUpWin" to="." method="_on_PopUpWin_popup_hide"]
+[connection signal="restart" from="PopUpWin" to="." method="_on_restart"]

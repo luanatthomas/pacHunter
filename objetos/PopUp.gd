@@ -1,20 +1,3 @@
-#extends Control
-#
-#onready var popUp := $PopUpGameOver
-#onready var rect := $ColorRect
-#
-#func _ready():
-#	rect.color = Color(0,0,0,0)
-#
-#func showPopUp():
-#	popUp.popup()
-#
-#func _on_PopUpGameOver_about_to_show():
-#	print("AAAAAAAAAAAAAAAAAAA")
-#	rect.color = Color(0,0,0, 255*0.8)
-#
-#func _on_PopUpGameOver_popup_hide():
-#	rect.color = Color(0,0,0,0)
 extends PopupDialog
 
 signal restart;
