@@ -43,8 +43,10 @@ margin_left = 6.0
 margin_top = 90.0
 margin_right = 721.0
 margin_bottom = 210.0
-text = "Você Venceu!"
+text = "Você venceu!"
 align = 1
+autowrap = true
+clip_text = true
 
 [node name="btn_home" type="Button" parent="."]
 margin_left = 188.0

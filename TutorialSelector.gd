@@ -16,6 +16,7 @@ func _on_btn_tutorial1_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_btn_tutorial2_pressed():
+	get_tree().change_scene_to(Tutorial2)
 	pass # Replace with function body.
 
 func _on_btn_tutorial3_pressed():

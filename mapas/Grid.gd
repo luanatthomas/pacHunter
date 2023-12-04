@@ -24,15 +24,8 @@ export (PackedScene) var blockUp : PackedScene
 export (PackedScene) var blockDown : PackedScene
 export (PackedScene) var blockStop : PackedScene
 
-#export (PackedScene) var backScene : PackedScene
-
 var backScene = load("res://Main.tscn")
 var nextScene = ""
-
-#em qualquer fase, quando o pacman morrer, vai para a tela de GameOver (gameFail)
-#de 1 a 9, quando pacman ganhar, vai para a próxima fase (1>2 2>3 3>4 ...) (levelX)
-#na fase 10, quando pacman ganhar, vai para tela de GameSuccess (gameSuccess)
-
 
 export var qntDown : int
 export var qntUp : int
@@ -48,9 +41,11 @@ func _ready():
 	grid.z_index = -1
 	gridLines.z_index = -1
 	z_index = -1
+	
 	popupBack = popupBackPS.instance()
 	popupBack.connect("restart", self, "_on_restart")
 	popupBack.connect("popup_hide", self, "_on_popup_hide")
+	
 	add_child(popupBack)
 
 func _process(delta: float):
@@ -95,6 +90,7 @@ func _process(delta: float):
 #	if cell.x > 0 && cell.x < quantLines && cell.y > 0 && cell. y < quantColumns && get_cellv(mouse_position) == 27:
 	if isValidCell(mouse_position):
 		gridLines.set_cellv(cell, selectedBlock)
+		
 
 func _input(event):
 	if event is InputEventKey:
@@ -220,9 +216,6 @@ func posGhost(initialPosition, ghost):
 	
 	return ghost
 
-func _on_btn_voltar_pressed():
-	pass # Replace with function body.
-
 func _on_btn_back_pressed():
 	get_tree().paused = true
 	popupBack.popup()
@@ -239,3 +232,4 @@ func _on_PopUpWin_popup_hide():
 
 func _on_popup_hide():
 	get_tree().paused = false
+

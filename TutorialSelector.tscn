@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://buton_theme.tres" type="Theme" id=1]
 [ext_resource path="res://img/tela-inicial.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://mapas/Tutorial1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://mapas/Tutorial3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://btn_voltar.tres" type="Theme" id=7]
+[ext_resource path="res://mapas/Tutorial2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -15,6 +16,7 @@ font_data = ExtResource( 4 )
 [node name="TutorialSelector" type="Node2D"]
 script = ExtResource( 3 )
 Tutorial1 = ExtResource( 5 )
+Tutorial2 = ExtResource( 8 )
 Tutorial3 = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]

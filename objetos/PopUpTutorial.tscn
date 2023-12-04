@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objetos/PopUpTutorial.gd" type="Script" id=1]
+[ext_resource path="res://buton_theme.tres" type="Theme" id=2]
+[ext_resource path="res://img/arrow.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 4 )
+
+[node name="PopUpTutorial" type="Popup"]
+margin_left = 388.0
+margin_top = 279.0
+margin_right = 1111.0
+margin_bottom = 681.0
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 90.0
+margin_right = 721.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 1 )
+text = "Ajude o PacMan a capturar o fantasma 
+antes do tempo acabar! 
+
+Você tem os blocos acima à sua disposição e
+sugestões de onde colocá-los ! (Mas eles só 
+estarão disponíveis nos tutoriais...)
+Selecione-os usando as setas do teclado ou 
+”A”, ”S”, ”D”, ”W” e depois clique na posição 
+desejada. Para o bloco de bloqueio, pressione 
+\"espaço” ou \"X”"
+align = 1
+autowrap = true
+
+[node name="btn_back" type="Button" parent="."]
+margin_left = 600.0
+margin_top = 470.0
+margin_right = 694.0
+margin_bottom = 564.0
+theme = ExtResource( 2 )
+icon = ExtResource( 3 )
+icon_align = 1
